@@ -1,7 +1,6 @@
 import pygame
 import sys
 
-from GamePlayer import *
 from GameLevel import *
 import GameMisc
  

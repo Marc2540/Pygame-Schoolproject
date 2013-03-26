@@ -21,12 +21,10 @@ play_button = my_font.render('Start spil', True, black)
 
 
 def run(screen):
-    """Handles the main menu.""""
-    while True:
-        screen.fill(white)
-        screen.blit(background, (0, 0))
-        screen.blit(game_title, ((854/2)-(pygame.Surface.get_width(game_title)/2), 100))
-        screen.blit(play_button, ((854/2)-(pygame.Surface.get_width(play_button)/2),480-100))
+    """Handles the main menu."""
+    done = False
+
+    while not done:
 
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
@@ -37,8 +35,13 @@ def run(screen):
 
                 if event.button == 1: #left mouse button
                     if mousex in range((854//2)-(pygame.Surface.get_width(play_button)//2), (854//2)+(pygame.Surface.get_width(play_button)//2)) and mousey in range(480-100, 480-100+pygame.Surface.get_height(play_button)):
-                        print('Pressed Play.')
-                        break
+                        done = True
+
+        screen.fill(white)
+        screen.blit(background, (0, 0))
+        screen.blit(game_title, ((854/2)-(pygame.Surface.get_width(game_title)/2), 100))
+        screen.blit(play_button, ((854/2)-(pygame.Surface.get_width(play_button)/2),480-100))
+
 
         #Update & fps
         pygame.display.flip()

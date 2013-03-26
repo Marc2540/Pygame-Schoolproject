@@ -1,7 +1,5 @@
 import GameMenu
-
-def event_checking():
-    pass
+import GameGame
 
 def game_state(screen):
     """
@@ -13,7 +11,8 @@ def game_state(screen):
 
     if current_game_state == 0:
         GameMenu.run(screen)
+        print('Changed game state')
         current_game_state = 1
 
     if current_game_state == 1:
-        pass
+        GameGame.run(screen)
