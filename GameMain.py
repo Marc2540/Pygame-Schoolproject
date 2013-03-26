@@ -1,4 +1,9 @@
-import pygame, sys
+import pygame
+import sys
+
+from GamePlayer import *
+from GameLevel import *
+import GameMisc
  
 #            R    G    B
 black    = (   0,   0,   0)
@@ -14,13 +19,16 @@ pygame.display.set_caption("Pygame School Project")
 clock = pygame.time.Clock()
 
 while True:
-    for event in pygame.event.get(): # User did something
-        if event.type == pygame.QUIT: # If user clicked close
-            pygame.quit()
-            sys.exit()
+
+    GameMisc.game_state(screen)
+
+#    for event in pygame.event.get(): # User did something
+#        if event.type == pygame.QUIT: # If user clicked close
+#            pygame.quit()
+#            sys.exit()
     
 
     
     #Update & fps
-    pygame.display.flip()
-    clock.tick(30)
+#    pygame.display.flip()
+#    clock.tick(30)
